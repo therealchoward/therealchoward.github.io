@@ -9,26 +9,26 @@ body {
     line-height: 1.5;
 }
 
-/* Default link color - medium pink */
+/* Default link color - pastel pink */
 a {
-    color: #E91E63;
+    color: #FFB6C1;
     text-decoration: underline;
 }
 
-/* Hover - medium green */
+/* Visited links - same as default (no color change) */
+a:visited {
+    color: #FFB6C1;
+}
+
+/* Hover MUST come after visited to work on clicked links */
 a:hover {
     color: #4CAF50;
     transition: color 0.3s ease;
 }
 
-/* Keep visited links the same as default (no color change) */
-a:visited {
-    color: #E91E63;
-}
-
-/* Keep active links the same as default (no color change) */
+/* Active - same as default */
 a:active {
-    color: #E91E63;
+    color: #FFB6C1;
 }
 
 /* Section dividers */
