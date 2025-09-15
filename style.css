@@ -9,26 +9,26 @@ body {
     line-height: 1.5;
 }
 
-/* Default link color - darker petal pink */
+/* Default link color - darkest grape jelly */
 a {
-    color: #FFB3E6;
+    color: #C5C5FF;
     text-decoration: underline;
 }
 
 /* Visited links - same as default (no color change) */
 a:visited {
-    color: #FFB3E6;
+    color: #C5C5FF;
 }
 
-/* Hover - darker touch grass green */
+/* Hover - darker clear skies */
 a:hover {
-    color: #B3FFC7;
+    color: #A1E9FF;
     transition: color 0.3s ease;
 }
 
 /* Active - same as default */
 a:active {
-    color: #FFB3E6;
+    color: #C5C5FF;
 }
 
 /* Section dividers */
