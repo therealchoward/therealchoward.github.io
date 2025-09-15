@@ -9,26 +9,26 @@ body {
     line-height: 1.5;
 }
 
-/* Default link color - pastel green */
+/* Default link color - medium green */
 a {
-    color: #90EE90;
+    color: #4CAF50;
     text-decoration: underline;
 }
 
-/* Pastel pink hover effect for links */
+/* Hover - medium pink */
 a:hover {
-    color: #FFB6C1;
+    color: #E91E63;
     transition: color 0.3s ease;
 }
 
-/* Clicked/visited link color - pastel blue */
+/* Visited - medium blue */
 a:visited {
-    color: #B6D7FF;
+    color: #2196F3;
 }
 
-/* Active (while being clicked) - pastel purple */
+/* Active - medium purple */
 a:active {
-    color: #DDA0DD;
+    color: #9C27B0;
 }
 
 /* Section dividers */
