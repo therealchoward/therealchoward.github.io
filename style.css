@@ -7,28 +7,30 @@ body {
     margin: 0 auto;
     font-family: 'Courier Prime', monospace;
     line-height: 1.5;
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
-/* Default link color - darkest grape jelly */
+/* Default link color - darker petal pink */
 a {
-    color: #C5C5FF;
+    color: #FFB3E6;
     text-decoration: underline;
 }
 
 /* Visited links - same as default (no color change) */
 a:visited {
-    color: #C5C5FF;
+    color: #FFB3E6;
 }
 
-/* Hover - darker clear skies */
+/* Hover - darker touch grass green */
 a:hover {
-    color: #A1E9FF;
+    color: #B3FFC7;
     transition: color 0.3s ease;
 }
 
 /* Active - same as default */
 a:active {
-    color: #C5C5FF;
+    color: #FFB3E6;
 }
 
 /* Section dividers */
