@@ -9,26 +9,26 @@ body {
     line-height: 1.5;
 }
 
-/* Default link color - pastel pink */
+/* Default link color - darker petal pink */
 a {
-    color: #FFB6C1;
+    color: #FFB3E6;
     text-decoration: underline;
 }
 
 /* Visited links - same as default (no color change) */
 a:visited {
-    color: #FFB6C1;
+    color: #FFB3E6;
 }
 
-/* Hover MUST come after visited to work on clicked links */
+/* Hover - darker touch grass green */
 a:hover {
-    color: #4CAF50;
+    color: #B3FFC7;
     transition: color 0.3s ease;
 }
 
 /* Active - same as default */
 a:active {
-    color: #FFB6C1;
+    color: #FFB3E6;
 }
 
 /* Section dividers */
