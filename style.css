@@ -11,7 +11,7 @@ body {
     color: #FFFFFF;
 }
 
-/* Default link color - darker petal pink */
+/* Default link color - default petal pink */
 a {
     color: #FFB3E6;
     text-decoration: underline;
@@ -22,7 +22,7 @@ a:visited {
     color: #FFB3E6;
 }
 
-/* Hover - darker touch grass green */
+/* Hover - default touch grass green */
 a:hover {
     color: #B3FFC7;
     transition: color 0.3s ease;
