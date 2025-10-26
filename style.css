@@ -13,24 +13,24 @@ body {
 
 /* Default link color - default petal pink */
 a {
-    color: #B3FFC7;
+    color: #FFB3E6;
     text-decoration: underline;
 }
 
 /* Visited links - same as default (no color change) */
 a:visited {
-    color: #B3FFC7;
+    color: #FFB3E6;
 }
 
 /* Hover - default touch grass green */
 a:hover {
-    color: #FFB3E6;
+    color: #B3FFC7;
     transition: color 0.3s ease;
 }
 
 /* Active - same as default */
 a:active {
-    color: #B3FFC7;
+    color: #FFB3E6;
 }
 
 /* Section dividers */
