@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chris howard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 15px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      background: #0f1117;
+      color: #e8e6e1;
+      line-height: 1.7;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    canvas#particle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 24px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #c0dff0;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #7ecdc7;
+      text-decoration: none;
+      transition: color 200ms ease, text-shadow 200ms ease;
+    }
+
+    a:hover {
+      color: #c9a0d6;
+      text-shadow: 0 0 8px rgba(180, 142, 173, 0.5);
+    }
+
+    .bio a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, #7ecdc7, #b48ead);
+      opacity: 0.3;
+      margin: 2.5rem 0;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #c0dff0;
+      margin-bottom: 1rem;
+      text-transform: lowercase;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 0.85rem;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: none;
+    }
+
+    .pub-list li {
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .pub-list li::before {
+      content: '-';
+      position: absolute;
+      left: 0;
+    }
+
+    .pub-link {
+      text-decoration: none;
+      transition: color 200ms ease, text-shadow 200ms ease;
+    }
+
+    .pub-link:hover {
+      color: #c9a0d6;
+      text-shadow: 0 0 8px rgba(180, 142, 173, 0.5);
+      text-decoration: underline;
+    }
+
+    .talks-section .talk-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .talks-section .talk-title {
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+
+    .talks-section ul {
+      margin-left: 0;
+    }
+
+    .talks-section li {
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.3rem;
+    }
+
+    .talks-section li::before {
+      content: '∴';
+      position: absolute;
+      left: 0;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      html {
+        font-size: 14px;
+      }
+
+      .container {
+        padding: 50px 18px 60px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particle-canvas"></canvas>
+
+<div class="container">
+
+  <h1 aria-label="chris howard"><span id="scramble-name"></span></h1>
+
+  <div class="bio">
+    <p>i'm an associate professor of philosophy at <a href="https://www.mcgill.ca/philosophy/">mcgill university</a>, where i direct the <a href="https://www.mcillptplab.com/">philosophy, technology, &amp; policy lab</a>.</p>
+
+    <p>my earlier work was in ethical theory &amp; metaethics. i now work on questions about power, legitimacy, &amp; governance in digital infrastructure. i'm currently writing about the illegitimate power of centralized social platforms &amp; ai systems, &amp; on the prospects for decentralized alternatives.</p>
+
+    <p>before joining mcgill, i was a research assistant professor at <a href="https://philosophy.unc.edu/">unc-chapel hill</a> &amp; core faculty in the <a href="https://ppe.unc.edu/">unc/duke program in philosophy, politics, &amp; economics</a>. i completed my ph.d. at the <a href="https://philosophy.arizona.edu/">university of arizona</a> (2017) &amp; an m.a. from <a href="https://www.brandeis.edu/philosophy/">brandeis</a> (2011). i was a visiting fellow at <a href="https://philosophy.fas.harvard.edu/">harvard</a> in 2017 &amp; at the <a href="https://philosophy.cass.anu.edu.au/">anu</a> in 2019.</p>
+
+    <p>i co-organize <a href="https://normativity.web.unc.edu/">CHillNorm</a> with Alex Worsnip &amp; Margaret Shea.</p>
+
+    <p>the best way to get in touch with me is by <a href="mailto:chris.howard@mcgill.ca">email</a> at <a href="mailto:chris.howard@mcgill.ca">chris.howard@mcgill.ca</a></p>
+  </div>
+
+  <hr>
+
+  <h2>edited book</h2>
+  <ul class="pub-list">
+    <li><a class="pub-link" href="https://academic.oup.com/book/44566"><em>Fittingness: Essays in the Philosophy of Normativity</em></a> (co-edited with Rach Cosker-Rowland). Oxford University Press (2022).</li>
+  </ul>
+
+  <h2>articles &amp; chapters</h2>
+  <ul class="pub-list">
+    <li><a class="pub-link" href="https://onlinelibrary.wiley.com/doi/10.1111/phis.70007">'Rational Feelings for Virtual Things?'</a>. Forthcoming in <em>Philosophical Issues</em>.</li>
+    <li>'Non-naturalism Without Contingentism' with Stephanie Leary. Forthcoming in <em>Oxford Studies in Metaethics</em> 21.</li>
+    <li>'The Fittingness-First Approach'. Forthcoming in Connie Rosati &amp; David Copp (eds.), <em>The Oxford Handbook of Metaethics</em>, OUP.</li>
+    <li><a class="pub-link" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/phpr.12904">'Forever Fitting Feelings'</a>. <em>Philosophy and Phenomenological Research</em> 107 (2023): 80-98.</li>
+    <li><a class="pub-link" href="https://plato.stanford.edu/entries/fitting-attitude-theories/">'Fitting Attitude Theories of Value'</a>. <em>Stanford Encyclopedia of Philosophy</em> (2023).</li>
+    <li><a class="pub-link" href="https://academic.oup.com/book/44566/chapter-abstract/376626479?redirectedFrom=fulltext">'In Defense of the Right Kind of Reason'</a> with Stephanie Leary. In Chris Howard and Rach Cosker-Rowland (eds.), <em>Fittingness</em>, OUP (2022).</li>
+    <li><a class="pub-link" href="https://academic.oup.com/book/44566/chapter-abstract/376622342?redirectedFrom=fulltext">'Fittingness: A User's Guide'</a> with Rach Cosker-Rowland. In Chris Howard and Rach Cosker-Rowland (eds.), <em>Fittingness</em>, OUP (2022).</li>
+    <li><a class="pub-link" href="https://www.journals.uchicago.edu/doi/abs/10.1086/713952">'Consequentialists Must Kill'</a>. <em>Ethics</em> 131 (2021): 727-753.</li>
+    <li><a class="pub-link" href="https://www.jstor.org/stable/45286546">'Weighing Epistemic and Practical Reasons for Belief'</a>. <em>Philosophical Studies</em> 177 (2020): 2227-43.</li>
+    <li><a class="pub-link" href="https://academic.oup.com/book/37382/chapter-abstract/331378081?redirectedFrom=fulltext">'Fitting Love and Reasons for Loving'</a>. <em>Oxford Studies in Normative Ethics</em> 6 (2019): 116-137.</li>
+    <li><a class="pub-link" href="https://academic.oup.com/book/32379/chapter-abstract/268656827?redirectedFrom=fulltext">'The Fundamentality of Fit'</a>. <em>Oxford Studies in Metaethics</em> 14 (2019): 216-236. Winner of the Marc Sanders Prize in Metaethics.</li>
+    <li><a class="pub-link" href="https://compass.onlinelibrary.wiley.com/doi/10.1111/phc3.12542">'Fittingness'</a>. <em>Philosophy Compass</em> 13 (2018): e12542.</li>
+    <li><a class="pub-link" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/tht3.193">'In Defense of the Wrong Kind of Reason'</a>. <em>Thought</em> 5 (2016): 53-62.</li>
+    <li><a class="pub-link" href="https://link.springer.com/article/10.1007/s11098-015-0524-z">'Transparency and the Ethics of Belief'</a>. <em>Philosophical Studies</em> 173 (2016): 1191-1201.</li>
+  </ul>
+
+  <h2>reviews</h2>
+  <ul class="pub-list">
+    <li><a class="pub-link" href="https://www.journals.uchicago.edu/doi/10.1086/731427">'Review of Getting Things Right: Fittingness, Reasons, and Value, by Conor McHugh and Jonathan Way'</a>. <em>Ethics</em> 135 (2024): 189-194.</li>
+    <li><a class="pub-link" href="https://www.journals.uchicago.edu/doi/10.1086/690083">'Review of Expressing Our Attitudes: Explanation and Expression in Ethics, by Mark Schroeder'</a>. <em>Ethics</em> 127 (2017): 806-812.</li>
+  </ul>
+
+  <h2>work in progress (<a href="mailto:chris.howard@mcgill.ca">email</a> for drafts)</h2>
+  <ul class="pub-list">
+    <li>[paper on decentralized social]</li>
+    <li>[paper on decentralized ai]</li>
+    <li>[book on decentralized social &amp; ai]</li>
+  </ul>
+
+  <hr>
+
+  <div class="talks-section">
+    <h2>upcoming &amp; recent talks</h2>
+
+    <div class="talk-group">
+      <p class="talk-title">[paper on decentralized ai]</p>
+      <ul>
+        <li>Oxford Institute for Ethics in AI, 5/2026</li>
+        <li>Ethics &amp; Tech Roundtable, McGill, 3/2026</li>
+      </ul>
+    </div>
+
+    <div class="talk-group">
+      <p class="talk-title">[paper on decentralized social]</p>
+      <ul>
+        <li>Workshop, Kyoto University, 6/2026</li>
+        <li>Center for Bioethics, NYU 4/2026</li>
+        <li>Centre for Ethics, University of Toronto, 1/2026</li>
+        <li>Ninth Annual PPE Society Meeting, 11/2025</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// --- Text Scramble Animation ---
+(function() {
+  const target = document.getElementById('scramble-name');
+  const finalText = 'chris howard';
+  const chars = 'abcdefghijklmnopqrstuvwxyz·-_';
+  const totalDuration = 1500;
+  const perChar = totalDuration / finalText.length;
+
+  let resolved = 0;
+  let frame;
+
+  function randomChar() {
+    return chars[Math.floor(Math.random() * chars.length)];
+  }
+
+  function render() {
+    let out = '';
+    for (let i = 0; i < finalText.length; i++) {
+      if (i < resolved) {
+        out += finalText[i];
+      } else {
+        out += finalText[i] === ' ' ? ' ' : randomChar();
+      }
+    }
+    target.textContent = out;
+  }
+
+  function scramble() {
+    render();
+    frame = requestAnimationFrame(scramble);
+  }
+
+  // Start scrambling immediately
+  scramble();
+
+  // Resolve characters one by one
+  let i = 0;
+  function resolveNext() {
+    if (i < finalText.length) {
+      resolved++;
+      i++;
+      setTimeout(resolveNext, perChar);
+    } else {
+      cancelAnimationFrame(frame);
+      target.textContent = finalText;
+    }
+  }
+
+  setTimeout(resolveNext, 300);
+})();
+
+// --- Particle Constellation Background ---
+(function() {
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+
+  let width, height;
+  let particles = [];
+  let mouse = { x: -9999, y: -9999 };
+  let isMobile = window.innerWidth < 768;
+  const particleCount = isMobile ? 50 : 100;
+  const connectionDistance = 120;
+  const mouseRadius = 150;
+  const mouseForce = 0.8;
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    isMobile = window.innerWidth < 768;
+  }
+
+  function createParticles() {
+    particles = [];
+    const count = isMobile ? 50 : particleCount;
+    for (let i = 0; i < count; i++) {
+      const isCyan = Math.random() > 0.35;
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: 1 + Math.random() * 1,
+        opacity: 0.35 + Math.random() * 0.15,
+        color: isCyan ? [126, 205, 199] : [180, 142, 173],
+      });
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Update and draw particles
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+
+      // Mouse repulsion
+      if (!isMobile) {
+        const dx = p.x - mouse.x;
+        const dy = p.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < mouseRadius && dist > 0) {
+          const force = (mouseRadius - dist) / mouseRadius * mouseForce;
+          p.vx += (dx / dist) * force * 0.15;
+          p.vy += (dy / dist) * force * 0.15;
+        }
+      }
+
+      // Dampen velocity
+      p.vx *= 0.99;
+      p.vy *= 0.99;
+
+      // Clamp speed
+      const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+      if (speed > 0.6) {
+        p.vx = (p.vx / speed) * 0.6;
+        p.vy = (p.vy / speed) * 0.6;
+      }
+
+      p.x += p.vx;
+      p.y += p.vy;
+
+      // Wrap around edges
+      if (p.x < 0) p.x = width;
+      if (p.x > width) p.x = 0;
+      if (p.y < 0) p.y = height;
+      if (p.y > height) p.y = 0;
+
+      // Draw particle
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + p.color[0] + ', ' + p.color[1] + ', ' + p.color[2] + ', ' + p.opacity + ')';
+      ctx.fill();
+    }
+
+    // Draw connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < connectionDistance) {
+          const opacity = (1 - dist / connectionDistance) * 0.2;
+          const c = particles[i].color;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = 'rgba(' + c[0] + ', ' + c[1] + ', ' + c[2] + ', ' + opacity + ')';
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', function() {
+    resize();
+    // Recreate if switching between mobile/desktop
+    const nowMobile = window.innerWidth < 768;
+    if (nowMobile !== isMobile) {
+      isMobile = nowMobile;
+      createParticles();
+    }
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  document.addEventListener('mouseleave', function() {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  resize();
+  createParticles();
+  animate();
+})();
+</script>
+
+</body>
+</html>
