@@ -179,7 +179,7 @@
 
 <div class="container">
 
-  <h1 aria-label="chris howard"><span id="scramble-name"></span></h1>
+  <h1>chris howard</h1>
 
   <div class="bio">
     <p>i'm an associate professor of philosophy at <a href="https://www.mcgill.ca/philosophy/">mcgill university</a>, where i direct the <a href="https://www.mcgillptplab.com/">philosophy, technology, &amp; policy lab</a>.</p>
@@ -258,57 +258,6 @@
 </div>
 
 <script>
-// --- Text Scramble Animation ---
-(function() {
-  const target = document.getElementById('scramble-name');
-  const finalText = 'chris howard';
-  const chars = 'abcdefghijklmnopqrstuvwxyz·-_';
-  const totalDuration = 1500;
-  const perChar = totalDuration / finalText.length;
-
-  let resolved = 0;
-  let frame;
-
-  function randomChar() {
-    return chars[Math.floor(Math.random() * chars.length)];
-  }
-
-  function render() {
-    let out = '';
-    for (let i = 0; i < finalText.length; i++) {
-      if (i < resolved) {
-        out += finalText[i];
-      } else {
-        out += finalText[i] === ' ' ? ' ' : randomChar();
-      }
-    }
-    target.textContent = out;
-  }
-
-  function scramble() {
-    render();
-    frame = requestAnimationFrame(scramble);
-  }
-
-  // Start scrambling immediately
-  scramble();
-
-  // Resolve characters one by one
-  let i = 0;
-  function resolveNext() {
-    if (i < finalText.length) {
-      resolved++;
-      i++;
-      setTimeout(resolveNext, perChar);
-    } else {
-      cancelAnimationFrame(frame);
-      target.textContent = finalText;
-    }
-  }
-
-  setTimeout(resolveNext, 300);
-})();
-
 // --- Particle Constellation Background ---
 (function() {
   const canvas = document.getElementById('particle-canvas');
