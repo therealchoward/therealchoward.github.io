@@ -229,6 +229,7 @@
     <li><span class="title">[paper on decentralized social]</span></li>
     <li><span class="title">[paper on decentralized ai]</span></li>
     <li><span class="title">[book on decentralized social &amp; ai]</span></li>
+    <li><span class="title">[paper on constitutional ai]</span></li>
   </ul>
 
   <hr>
@@ -243,6 +244,13 @@
         <li>Canadian Association for the Philosophy of AI, 5/2026</li>
         <li>Oxford Institute for Ethics in AI, 5/2026</li>
         <li>Ethics &amp; Tech Roundtable, McGill, 3/2026</li>
+      </ul>
+    </div>
+
+    <div class="talk-group">
+      <p class="talk-title title">[paper on constitutional ai]</p>
+      <ul>
+        <li>Keynote, <a href="https://grin.normativity.ca/">GRIN</a> Fellow's Conference</li>
       </ul>
     </div>
 
@@ -283,6 +291,7 @@
     particles = [];
     const count = isMobile ? 50 : particleCount;
     for (let i = 0; i < count; i++) {
+      const isViolet = Math.random() < 0.3;
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
@@ -290,6 +299,7 @@
         vy: (Math.random() - 0.5) * 0.5,
         radius: 1 + Math.random() * 1,
         opacity: 0.35 + Math.random() * 0.15,
+        color: isViolet ? [160, 140, 200] : [126, 205, 199],
       });
     }
   }
@@ -336,7 +346,7 @@
       // Draw particle
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(126, 205, 199, ' + p.opacity + ')';
+      ctx.fillStyle = 'rgba(' + p.color[0] + ', ' + p.color[1] + ', ' + p.color[2] + ', ' + p.opacity + ')';
       ctx.fill();
     }
 
@@ -351,7 +361,10 @@
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = 'rgba(126, 205, 199, ' + opacity + ')';
+          const cr = (particles[i].color[0] + particles[j].color[0]) / 2;
+          const cg = (particles[i].color[1] + particles[j].color[1]) / 2;
+          const cb = (particles[i].color[2] + particles[j].color[2]) / 2;
+          ctx.strokeStyle = 'rgba(' + cr + ', ' + cg + ', ' + cb + ', ' + opacity + ')';
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
